@@ -18,6 +18,17 @@ class QuizApplication(private val teamName: String, database: Database? = null):
     override fun handle(question: Question) {
         logger.log(question)
         if (question.category == "team-registration") handleRegisterTeam(question)
+        if (question.category == "arithmetic") handleAritmethics(question)
+    }
+
+    private fun handleAritmethics(question: Question) {
+        val chars = question.question.split(" ")
+        when(chars[1]){
+            "-" -> answer(question.category, questionId = question.id(), (chars[0].toInt() - chars[2].toInt()).toString())
+            "+" -> answer(question.category, questionId = question.id(), (chars[0].toInt() + chars[2].toInt()).toString())
+            "/" -> answer(question.category, questionId = question.id(), (chars[0].toInt() / chars[2].toInt()).toString())
+            "*" -> answer(question.category, questionId = question.id(), (chars[0].toInt() * chars[2].toInt()).toString())
+        }
     }
 
 
