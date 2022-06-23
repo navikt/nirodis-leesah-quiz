@@ -11,7 +11,7 @@ spec:
   service:
     protocol: http
   ingresses:
-    - https://nirodis.dev.intern.nav.no
+    - https://nirodis-leesah-quiz.dev.intern.nav.no
   strategy:
     type: Recreate
   liveness:
