@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: nirodis
   namespace: leesah-quiz
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "256M"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
   labels:
     team: leesah-quiz
 spec:
@@ -11,7 +14,7 @@ spec:
   service:
     protocol: http
   ingresses:
-    - https://nirodis-leesah-quiz.dev.intern.nav.no
+    - https://nirodis.dev.intern.nav.no
   strategy:
     type: Recreate
   liveness:

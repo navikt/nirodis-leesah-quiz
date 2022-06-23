@@ -23,7 +23,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
     }
 
     private fun handleIngress(question: Question) {
-        answer(question.category, questionId = question.id(), "https://nirodis-leesah-quiz.dev.intern.nav.no")
+        answer(question.category, questionId = question.id(), "https://nirodis.dev.intern.nav.no")
     }
 
     private fun handleAritmethics(question: Question) {
