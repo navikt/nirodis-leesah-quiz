@@ -19,6 +19,11 @@ class QuizApplication(private val teamName: String, database: Database? = null):
         logger.log(question)
         if (question.category == "team-registration") handleRegisterTeam(question)
         if (question.category == "arithmetic") handleAritmethics(question)
+        if (question.category == "make-ingress") handleIngress(question)
+    }
+
+    private fun handleIngress(question: Question) {
+        answer(question.category, questionId = question.id(), "https://nirodis.dev.intern.nav.no")
     }
 
     private fun handleAritmethics(question: Question) {

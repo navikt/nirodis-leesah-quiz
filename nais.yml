@@ -8,6 +8,10 @@ metadata:
 spec:
   image: {{image}}
   port: 8080
+  service:
+    protocol: http
+  ingresses:
+    - https://nirodis.dev.intern.nav.no
   strategy:
     type: Recreate
   liveness:
