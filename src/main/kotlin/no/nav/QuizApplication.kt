@@ -2,7 +2,9 @@ package no.nav
 
 import no.nav.db.Database
 import no.nav.quizrapid.*
+import no.nav.rapid.Answer
 import no.nav.rapid.Assessment
+import no.nav.rapid.Message
 import no.nav.rapid.Question
 
 
@@ -27,8 +29,8 @@ class QuizApplication(private val teamName: String, database: Database? = null):
      * Spørsmål handlers
      */
 
-    private fun handleRegisterTeam(question: Question) {
-        TODO("Her må du skrive kode ;)")
+    private fun handleRegisterTeam(question: Question){
+        answer(question.category, questionId = "vet ik", "nirodis")
     }
 
 }
