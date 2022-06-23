@@ -19,7 +19,12 @@ class QuizApplication(private val teamName: String, database: Database? = null):
         logger.log(question)
         if (question.category == "team-registration") handleRegisterTeam(question)
         if (question.category == "arithmetic") handleAritmethics(question)
+        if (question.category == "NAV") handleNav(question)
         if (question.category == "make-ingress") handleIngress(question)
+    }
+
+    private fun handleNav(question: Question) {
+        answer(question.category, questionId = question.id(), "https://detsombetyrnoe.no")
     }
 
     private fun handleIngress(question: Question) {
